@@ -1,0 +1,143 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Package Booking Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        hr{
+            border-top: 0.5px solid #6E6E6E;
+            width: 100%;
+            transform: scaleY(0.5);
+        }
+        @media only screen and (max-width: 480px) {
+            .tropical-island {
+                width: 245px !important;
+            }
+        }
+    </style>
+</head>
+<body style="font-family: Poppins, sans-serif; color: #0D0202; background-color: white; margin: 0; padding: 20px;">
+    <div style="width: 100%; max-width: 794px; margin: 0 auto;">
+        <div style="text-align: center;">
+            <img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/explore-world.png" alt="Explore World Logo" style="width: 231px; height: 42px;">
+            <div style="font-size: 16px; font-weight: 500; margin-top: 8px;">Confirmation Number: 235354675</div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <div style="font-size: 18px;font-weight: 500;">Thank You {{name}}</div>
+            <div style="font-size: 22px; font-weight: 600;">Your booking with Explore World is confirmed.</div>
+            <div style="font-size: 18px; font-weight: 400; margin: 8px 0;">
+                We are excited to confirm your booking for the Tropical Island Adventure. Your full itinerary Information are in the document attached with this email.
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 35px;">
+            <a href="#" style="padding: 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View and manage your booking</a>
+        </div>
+
+        <div style="background: #F0F3F6; border-radius: 12px; padding: 32px 24px; margin-top: 60px;">
+            <div style="text-align: center;">
+                <img class="tropical-island" src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/tropical-island.png" alt="Tropical Island Image" style="width: 368px; height: 176px; object-fit: cover; border-radius: 32px;">
+            </div>
+            <div style="margin-top: 32px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td style="font-size: 18px; font-weight: 400;">Booking ID</td>
+                        <td style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 18px; font-weight: 400;">Travel Dates</td>
+                        <td style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024 to August 20, 2024</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 18px; font-weight: 400;">Number of Travelers</td>
+                        <td style="font-size: 16px; font-weight: 600; text-align: right;">2 Adults, 1 Child</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                    </tr>
+                    <tr style="margin-top: 12px;">
+                        <td style="font-size: 18px; font-weight: 400;">Total Amount</td>
+                        <td style="font-size: 16px; font-weight: 600; text-align: right;">₹ 103,524</td>
+                    </tr>
+                    <tr style="margin-top: 12px;">
+                        <td style="font-size: 18px; font-weight: 400;">Amount Paid</td>
+                        <td style="font-size: 16px; font-weight: 600; text-align: right;">₹ 31,057</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr style="border: none; height: 1px; background: repeating-linear-gradient(90deg, #BAB2B2, #BAB2B2 8px, transparent 8px, transparent 20px); margin: 20px 0;">
+                        </td>
+                    </tr>
+
+                    <tr style="margin-top: 8px;">
+                        <td style="font-size: 18px; font-weight: 400;">Balance</td>
+                        <td style="font-size: 16px; font-weight: 600; color: #2D54F9; text-align: right;">₹ 72,467</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <div  style="font-size: 18px; margin-bottom: 24px;">Please ensure that the balance amount of <strong>₹ 72,467</strong> is paid by <strong>17 August 2024</strong> to avoid any inconvenience.</div>
+            <div  style="font-size: 18px; margin-bottom: 20px;"><strong>Important Information</strong></div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                <div><img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center;"></div>
+                <div style="font-size: 18px;">Please bring a valid photo ID for check-in</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                <div><img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center;"></div>
+                <div style="font-size: 18px;">Our representative will be waiting for you at [Meeting Point] on [Meeting Date] at [Meeting Time]</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                <div><img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center;"></div>
+                <div style="font-size: 18px;">In case of any changes or cancellations, please refer to our cancellation policy [link to policy]</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 32px;">
+            <div style="font-size: 18px; font-weight: 500;">For any queries, feel free to contact us:</div>
+            <div style="display: flex; margin-top: 6px; gap: 4px;">
+                <div style="font-size: 18px;">Email:</div>
+                <div><a  style="font-size: 18px; text-decoration: none; color: #200505;" href="mailto: info@exploreworld.com"><strong>info@exploreworld.com</strong></a></div>
+            </div>
+            <div style="display: flex; margin-top: 6px; gap: 4px;">
+                <div style="font-size: 18px;">Phone:</div>
+                <div style="font-size: 18px;"><strong>0473 234256</strong></div>
+            </div>
+            <div  style="font-size: 18px; margin-top: 12px;">
+                Thank you for choosing Explore World. We look forward to providing you with an unforgettable travel experience!</div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <table role="presentation" width="100%">
+                <tr>
+                    <td style="font-size: 13px; text-align: center; hover:pointer;">
+                        <a style="text-decoration: none; color: #200505;" href="#">Privacy Policy</a>
+                    </td>
+                    <td style="font-size: 13px; text-align: center; hover:pointer;">
+                        <a style="text-decoration: none; color: #200505;" href="#">Terms and Conditions</a>
+                    </td>
+                    <td style="font-size: 13px; text-align: center; hover:pointer;">
+                        <a style="text-decoration: none; color: #200505;" href="#">Cancellation Policy</a>
+                    </td>
+                </tr>
+            </table>
+            <div style="border-top: 0.5px solid #6E6E6E; width: 100%; margin: 10px 0;"></div>
+            <div style="font-size: 12px;">This is a computer generated email, please don’t reply to this email</div>
+            <div style="font-size: 12px;">© explore world 2024</div>
+        </div>
+    </div>
+</body>
+</html>
