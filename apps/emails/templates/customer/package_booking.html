@@ -6,10 +6,24 @@
     <title>Package Booking Confirmation</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap" rel="stylesheet">
     <style>
-        hr{
-            border-top: 0.5px solid #6E6E6E;
-            width: 100%;
-            transform: scaleY(0.5);
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #BAB2B2;
+            margin: 20px 0;
+        }
+        .info-block {
+            padding-bottom: 16px;
+        }
+        .info-block img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .info-block div {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 8px;
+            font-size: 18px;
         }
         @media only screen and (max-width: 480px) {
             .tropical-island {
@@ -48,21 +62,21 @@
                         <td style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                        <td colspan="2"><hr></td>
                     </tr>
                     <tr>
                         <td style="font-size: 18px; font-weight: 400;">Travel Dates</td>
                         <td style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024 to August 20, 2024</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                        <td colspan="2"><hr></td>
                     </tr>
                     <tr>
                         <td style="font-size: 18px; font-weight: 400;">Number of Travelers</td>
                         <td style="font-size: 16px; font-weight: 600; text-align: right;">2 Adults, 1 Child</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                        <td colspan="2"><hr></td>
                     </tr>
                     <tr style="margin-top: 12px;">
                         <td style="font-size: 18px; font-weight: 400;">Total Amount</td>
@@ -74,16 +88,15 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <hr style="border: none; height: 1px; background: repeating-linear-gradient(90deg, #BAB2B2, #BAB2B2 8px, transparent 8px, transparent 20px); margin: 20px 0;">
+                            <hr style="background: repeating-linear-gradient(90deg, #BAB2B2, #BAB2B2 8px, transparent 8px, transparent 20px);">
                         </td>
                     </tr>
-
                     <tr style="margin-top: 8px;">
                         <td style="font-size: 18px; font-weight: 400;">Balance</td>
                         <td style="font-size: 16px; font-weight: 600; color: #2D54F9; text-align: right;">₹ 72,467</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                        <td colspan="2"><hr></td>
                     </tr>
                 </table>
             </div>
@@ -92,45 +105,53 @@
         <div style="margin-top: 50px;">
             <div  style="font-size: 18px; margin-bottom: 24px;">Please ensure that the balance amount of <strong>₹ 72,467</strong> is paid by <strong>17 August 2024</strong> to avoid any inconvenience.</div>
             <div  style="font-size: 18px; margin-bottom: 20px;"><strong>Important Information</strong></div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                <div><img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center;"></div>
+            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 16px;">
+                <div style="line-height: 0; margin-top: 4px;">
+                    <img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-block;">
+                </div>
                 <div style="font-size: 18px;">Please bring a valid photo ID for check-in</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                <div><img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center;"></div>
+            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 16px;">
+                <div style="line-height: 0; margin-top: 4px;">
+                    <img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-block;">
+                </div>
                 <div style="font-size: 18px;">Our representative will be waiting for you at [Meeting Point] on [Meeting Date] at [Meeting Time]</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                <div><img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-flex; justify-content: center; align-items: center;"></div>
+            <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 16px;">
+                <div style="line-height: 0; margin-top: 4px;">
+                    <img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/info-circle.png" style="width: 22px; height: 22px; display: inline-block;">
+                </div>
                 <div style="font-size: 18px;">In case of any changes or cancellations, please refer to our cancellation policy [link to policy]</div>
             </div>
+
         </div>
 
         <div style="margin-top: 32px;">
             <div style="font-size: 18px; font-weight: 500;">For any queries, feel free to contact us:</div>
-            <div style="display: flex; margin-top: 6px; gap: 4px;">
-                <div style="font-size: 18px;">Email:</div>
-                <div><a  style="font-size: 18px; text-decoration: none; color: #200505;" href="mailto: info@exploreworld.com"><strong>info@exploreworld.com</strong></a></div>
+            <div style="display: block; margin-top: 6px;">
+                <span style="font-size: 18px;">Email: </span>
+                <a href="mailto: info@exploreworld.com" style="font-size: 18px; text-decoration: none; color: #200505;"><strong>info@exploreworld.com</strong></a>
             </div>
-            <div style="display: flex; margin-top: 6px; gap: 4px;">
-                <div style="font-size: 18px;">Phone:</div>
-                <div style="font-size: 18px;"><strong>0473 234256</strong></div>
+            <div style="display: block; margin-top: 6px;">
+                <span style="font-size: 18px;">Phone: </span>
+                <span style="font-size: 18px;"><strong>0473 234256</strong></span>
             </div>
-            <div  style="font-size: 18px; margin-top: 12px;">
-                Thank you for choosing Explore World. We look forward to providing you with an unforgettable travel experience!</div>
+            <div style="font-size: 18px; margin-top: 12px;">
+                Thank you for choosing Explore World. We look forward to providing you with an unforgettable travel experience!
+            </div>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
             <table role="presentation" width="100%">
                 <tr>
-                    <td style="font-size: 13px; text-align: center; hover:pointer;">
-                        <a style="text-decoration: none; color: #200505;" href="#">Privacy Policy</a>
+                    <td style="font-size: 13px; text-align: center;">
+                        <a href="#" style="text-decoration: none; color: #200505;">Privacy Policy</a>
                     </td>
-                    <td style="font-size: 13px; text-align: center; hover:pointer;">
-                        <a style="text-decoration: none; color: #200505;" href="#">Terms and Conditions</a>
+                    <td style="font-size: 13px; text-align: center;">
+                        <a href="#" style="text-decoration: none; color: #200505;">Terms and Conditions</a>
                     </td>
-                    <td style="font-size: 13px; text-align: center; hover:pointer;">
-                        <a style="text-decoration: none; color: #200505;" href="#">Cancellation Policy</a>
+                    <td style="font-size: 13px; text-align: center;">
+                        <a href="#" style="text-decoration: none; color: #200505;">Cancellation Policy</a>
                     </td>
                 </tr>
             </table>
