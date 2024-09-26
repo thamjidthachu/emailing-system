@@ -26,37 +26,40 @@ class MailSendView(TemplateView):
 
         # Define email roles and templates
         email_data = [
-            # Customer Emails
-            'customer/package_booking.html',
-            'customer/package_booking_cancellation.html',
-            'customer/package_refund.html',
-            'customer/package_enquiry.html',
-
-            # Agent Emails
-            'agent/package_enquiry.html',
-            'agent/package_booking.html',
-            'agent/package_approval.html',
-            'agent/package_payment_transaction.html',
-            'agent/package_booking_cancellation.html',
+            # # Customer Emails
+            # 'customer/package_booking.html',
+            # 'customer/package_booking_cancellation.html',
+            # 'customer/package_refund.html',
+            # 'customer/package_enquiry.html',
+            #
+            # # Agent Emails
+            # 'agent/package_enquiry.html',
+            # 'agent/package_booking.html',
+            # 'agent/package_approval.html',
+            # 'agent/package_payment_transaction.html',
+            # 'agent/package_booking_cancellation.html',
+            #
+            # # Admin Emails
+            # 'admin/package_enquiry.html',
+            # 'admin/package_booking.html',
+            # 'admin/package_booking_status_change.html',
+            # 'admin/package_booking_submission.html',
+            # 'admin/package_booking_cancellation.html',
+            # 'admin/package_booking_cancellation.html',
             
-            # Admin Emails
-            'admin/package_enquiry.html',
-            'admin/package_booking.html',
-            'admin/package_booking_status_change.html',
-            'admin/package_booking_submission.html',
-            'admin/package_booking_cancellation.html',
+            # Invoice Emails
+            'invoice/invoice.html',
         ]
         
         # Loop through the email data and send each email
         for template in email_data:
-            user = template.split('/')[0].capitalize()
-            template_name = template.split('/')[1].replace('.html', '').replace('_', ' ').title()
-            # Create dynamic subject
+            names = template.split('/')
+            user = names[0].capitalize()
+            template_name = names[1].replace('.html', '').replace('_', ' ').title()
             email_subject = f"{subject} | {user} | {template_name}"
             
             email_body = render_to_string(template, {'name': 'Thamjid'})
 
-            # Create the email message
             mail = EmailMessage(
                 subject=email_subject,
                 body=email_body,
