@@ -45,10 +45,12 @@ class MailSendView(TemplateView):
             'admin/package_booking_status_change.html',
             'admin/package_booking_submission.html',
             'admin/package_booking_cancellation.html',
-            'admin/package_booking_cancellation.html',
             
             # Invoice Emails
             # 'invoice/invoice.html',
+            
+            # OTP Emails
+            'otp/otp.html',
         ]
         
         # Loop through the email data and send each email
