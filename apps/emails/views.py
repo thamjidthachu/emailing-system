@@ -1,4 +1,5 @@
 import json
+import subprocess
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.core.mail import EmailMessage
@@ -11,6 +12,22 @@ from django.utils.decorators import method_decorator
 
 @method_decorator(csrf_exempt, name='dispatch')
 class MailSendView(TemplateView):
+    
+    @staticmethod
+    def get_invoice_pdf(template_name, context, *args, **kwargs):
+        html = render_to_string(template_name, context)
+
+        cmd = ['wkhtmltopdf', '-', '-']
+        pdf = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = pdf.communicate(input=html.encode('utf-8'))
+        if pdf.returncode != 0:
+            # wkhtmltopdf failed, so return an error response
+            return HttpResponse(
+                json.dumps({'result': {'status': 'error', 'message': 'Something went wrong.'}}),
+                content_type='application/json',
+                status=400
+            )
+        return stdout
 
     def post(self, request, *args, **kwargs):
         print(self.__dict__)
@@ -70,6 +87,8 @@ class MailSendView(TemplateView):
             )
             mail.content_subtype = 'html'
             mail.mixed_subtype = 'related'
+            
+            mail.attach('invoice.pdf', self.get_invoice_pdf(template, context={'name': 'Thamjid'}), 'application/pdf')
 
             # Try to send the email
             try:
