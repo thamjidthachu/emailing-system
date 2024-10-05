@@ -80,14 +80,18 @@ WSGI_APPLICATION = 'emailing_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": config("PSQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": config("PSQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": config("PSQL_USER", "user"),
+        "PASSWORD": config("PSQL_PASSWORD", "password"),
+        "HOST": config("PSQL_HOST", "localhost"),
+        "PORT": config("PSQL_PORT", "5432"),
     }
 }
 
 # config email
 EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_USE_TLS = bool(int(config('EMAIL_USE_TLS')))
 EMAIL_USE_SSL = bool(int(config('EMAIL_USE_SSL')))
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')

@@ -1,23 +1,38 @@
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Package Booking Cancellation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap" rel="stylesheet">
     <style>
-    hr{
-        border-top: 1px solid #6E6E6E;
-        width: 100%;
-        transform: scaleY(0.5);
-    }
+        hr{
+            border-top: 1px solid #6E6E6E;
+            width: 100%;
+            transform: scaleY(0.5);
+        }
+        .info-block{
+            padding: 0.313rem;
+        }
+        @media only screen and (max-width: 764px) {
+            .info-block {
+              width: 100% !important;
+              display: block !important;
+              padding: 0.156rem !important;
+            }
+            td {
+              text-align: left !important;
+            }
+        }
     </style>
 </head>
-<body style="font-family: Poppins, sans-serif; color: #0D0202; background-color: white; margin: 0; padding: 20px;">
+<body style="font-family: Arial, sans-serif; color: #0D0202; background-color: white; margin: 0; padding: 20px;">
     <div style="width: 100%; max-width: 794px; margin: 0 auto;">
-        <div style="text-align: center;">
-            <img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/explore-world.png" alt="Explore World Logo" style="width: 231px; height: 42px;">
-        </div>
+        <table width="100%" style="max-width: 794px; margin: 0 auto; padding: 24px 0; background-color: #B61744; border-top-left-radius: 24px; border-top-right-radius: 24px; text-align: center;">
+            <tr>
+                <td style="text-align: center !important;">
+                    <img src="https://dev-exrevampadmin.flycatchtech.in/media/common_images/explore-world-white.png" alt="Explore World Logo" style="width: 231px; height: 42px; text-align: center; margin: 0 auto;" />
+                </td>
+            </tr>
+        </table>
 
         <div style="text-align: center; margin-top: 20px;">
             <div style="font-size: 22px; font-weight: 600;">Booking Cancelled</div>
@@ -30,53 +45,53 @@
           <div style="margin-top: 20px;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
-                      <td style="font-size: 18px; font-weight: 400;">Booking ID</td>
-                      <td style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking ID</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td style="font-size: 18px; font-weight: 400;">Travel Dates</td>
-                      <td style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024 to August 20, 2024</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Travel Dates</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024 to August 20, 2024</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td style="font-size: 18px; font-weight: 400;">Number of Travelers</td>
-                      <td style="font-size: 16px; font-weight: 600; text-align: right;">2 Adults, 1 Child </td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Number of Travelers</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">2 Adults, 1 Child </td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td style="font-size: 18px; font-weight: 400;">Refund Type</td>
-                      <td style="font-size: 16px; font-weight: 600; text-align: right;">Refundable</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Refund Type</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">Refundable</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td style="font-size: 18px; font-weight: 400;">Booking Amount</td>
-                      <td style="font-size: 16px; font-weight: 600; text-align: right;">₹ 31,057</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking Amount</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ 31,057</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td style="font-size: 18px; font-weight: 400;">Refund Amount</td>
-                      <td style="font-size: 16px; font-weight: 600; text-align: right;">₹ 22,057</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Refund Amount</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ 22,057</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td style="font-size: 18px; font-weight: 400;">Agent</td>
-                      <td style="font-size: 14px; font-weight: 600; text-align: right;">Asif Muhammad</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Agent</td>
+                      <td class="info-block" style="font-size: 14px; font-weight: 600; text-align: right;">Asif Muhammad</td>
                   </tr>
                   <tr>
-                      <td colspan="2" style="font-size: 14px;text-align: right; font-weight: 200; padding-top: 0px;">id: #AGN79089</td>
+                      <td class="info-block" colspan="2" style="font-size: 16px;text-align: right; padding-top: 0px;">id: #AGN79089</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
