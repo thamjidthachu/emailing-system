@@ -88,7 +88,7 @@ class MailSendView(TemplateView):
             mail.content_subtype = 'html'
             mail.mixed_subtype = 'related'
             
-            # mail.attach('invoice.pdf', self.get_invoice_pdf(template, context={'name': 'Thamjid'}), 'application/pdf')
+            mail.attach('invoice.pdf', self.get_invoice_pdf(template, context={'name': 'Thamjid'}), 'application/pdf')
 
             # Try to send the email
             try:
