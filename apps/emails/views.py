@@ -16,8 +16,17 @@ class MailSendView(TemplateView):
     @staticmethod
     def get_invoice_pdf(template_name, context, *args, **kwargs):
         html = render_to_string(template_name, context)
-
-        cmd = ['wkhtmltopdf', '-', '-']
+        
+        # wkhtmltopdf command with options
+        cmd = [
+            'wkhtmltopdf',
+            '--disable-smart-shrinking',  # Disable smart shrinking to ensure content fits
+            '--no-stop-slow-scripts',  # Allow long-running scripts if you have them
+            '--page-height', '250mm',  # Define page height, you can adjust this value
+            '--page-width', '150mm',  # Define page width (A4 width)
+            '-', '-'  # Input from stdin and output to stdout
+        ]
+        
         pdf = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = pdf.communicate(input=html.encode('utf-8'))
         if pdf.returncode != 0:
@@ -57,14 +66,14 @@ class MailSendView(TemplateView):
             # 'agent/package_booking_cancellation.html',
 
             # Admin Emails
-            # 'admin/package_enquiry.html',
+            'admin/package_enquiry.html',
             # 'admin/package_booking.html',
             # 'admin/package_booking_status_change.html',
             # 'admin/package_booking_submission.html',
             # 'admin/package_booking_cancellation.html',
             
             # Invoice Emails
-            'invoice/invoice.html',
+            # 'invoice/invoice.html',
             
             # OTP Emails
             # 'otp/otp.html',
@@ -88,7 +97,7 @@ class MailSendView(TemplateView):
             mail.content_subtype = 'html'
             mail.mixed_subtype = 'related'
             
-            mail.attach('invoice.pdf', self.get_invoice_pdf(template, context={'name': 'Thamjid'}), 'application/pdf')
+            # mail.attach('invoice.pdf', self.get_invoice_pdf('invoice/invoice-pdf.html', context={'name': 'Thamjid'}), 'application/pdf')
 
             # Try to send the email
             try:
