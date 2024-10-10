@@ -53,30 +53,30 @@ class MailSendView(TemplateView):
         # Define email roles and templates
         email_data = [
             # Customer Emails
-            # 'customer/package_booking.html',
-            # 'customer/package_booking_cancellation.html',
-            # 'customer/package_refund.html',
-            # 'customer/package_enquiry.html',
+            'customer/package_booking.html',
+            'customer/package_booking_cancellation.html',
+            'customer/package_refund.html',
+            'customer/package_enquiry.html',
 
             # Agent Emails
-            # 'agent/package_enquiry.html',
-            # 'agent/package_booking.html',
-            # 'agent/package_approval.html',
-            # 'agent/package_payment_transaction.html',
-            # 'agent/package_booking_cancellation.html',
+            'agent/package_enquiry.html',
+            'agent/package_booking.html',
+            'agent/package_approval.html',
+            'agent/package_payment_transaction.html',
+            'agent/package_booking_cancellation.html',
 
             # Admin Emails
             'admin/package_enquiry.html',
-            # 'admin/package_booking.html',
-            # 'admin/package_booking_status_change.html',
-            # 'admin/package_booking_submission.html',
-            # 'admin/package_booking_cancellation.html',
-            
+            'admin/package_booking.html',
+            'admin/package_booking_status_change.html',
+            'admin/package_booking_submission.html',
+            'admin/package_booking_cancellation.html',
+
             # Invoice Emails
-            # 'invoice/invoice.html',
+            'invoice/invoice.html',
             
             # OTP Emails
-            # 'otp/otp.html',
+            'otp/otp.html',
         ]
         
         # Loop through the email data and send each email
@@ -97,7 +97,8 @@ class MailSendView(TemplateView):
             mail.content_subtype = 'html'
             mail.mixed_subtype = 'related'
             
-            # mail.attach('invoice.pdf', self.get_invoice_pdf('invoice/invoice-pdf.html', context={'name': 'Thamjid'}), 'application/pdf')
+            if template == 'invoice/invoice.html':
+                mail.attach('invoice.pdf', self.get_invoice_pdf('invoice/invoice-pdf.html', context={'name': 'Thamjid'}), 'application/pdf')
 
             # Try to send the email
             try:
