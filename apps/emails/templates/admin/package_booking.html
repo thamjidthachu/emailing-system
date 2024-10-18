@@ -37,7 +37,7 @@
         <div style="text-align: center; margin-top: 20px;">
             <div style="font-size: 22px; font-weight: 600;">New Booking</div>
             <div style="font-size: 18px; font-weight: 400; margin: 10px 0;">
-                 A new booking has been made for the Tropical Island Adventure package (5 Nights,6 Days)
+                 A new booking has been made for {{package_name}} package ({nights} Nights,{{days}} Days)
             </div>
         </div>
 
@@ -46,31 +46,33 @@
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking ID</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{booking_id}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Travel Dates</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024 to August 20, 2024</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{travel_from}} to {{travel_to}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Number of Travelers</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">2 Adults, 1 Child </td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">
+                          {% if adults > 0 %}{{adults}} Adults, {% endif %}{% if children > 0 %}{{children}} Child, {% endif %}{% if infants > 0 %}{{infants}} Infants{% endif %}
+                      </td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Agent</td>
-                      <td class="info-block" style="font-size: 14px; font-weight: 600; text-align: right;">Asif Muhammad</td>
+                      <td class="info-block" style="font-size: 14px; font-weight: 600; text-align: right;">{{agent_name}}</td>
                   </tr>
                   <tr>
-                      <td class="info-block" colspan="2" style="font-size: 16px;text-align: right; padding-top: 0px;">id: #AGN79089</td>
+                      <td class="info-block" colspan="2" style="font-size: 16px;text-align: right; padding-top: 0px;">Id: #{{agent_id}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
@@ -80,7 +82,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 20px;">
-            <a href="#" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
+            <a href="{{admin_url}}" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">

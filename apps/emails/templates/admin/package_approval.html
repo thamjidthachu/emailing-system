@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Package Booking Status Change</title>
+    <title>Package Booking Submission</title>
     <style>
         hr{
             border-top: 1px solid #6E6E6E;
@@ -35,9 +35,9 @@
         </table>
 
         <div style="text-align: center; margin-top: 20px;">
-            <div style="font-size: 22px; font-weight: 600;">Package Status Changed - Approval Needed</div>
+            <div style="font-size: 22px; font-weight: 600;">New Package Added - Approval Needed</div>
             <div style="font-size: 18px; font-weight: 400; margin: 10px 0;">
-                Status of package Tropical Island Adventure package updated from <strong>Inactive</strong> to <strong>Active</strong>.
+                A new package has been added by agent <strong>{{agent_name}}</strong>, and requires your approval.
             </div>
         </div>
 
@@ -46,21 +46,21 @@
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Package Name</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">Tropical Island Adventure package</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{package_name}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Package ID</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">#4556</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Agent ID</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">#{{package_id}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Date Submitted</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024 </td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{submit_date}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
@@ -76,7 +76,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 20px;">
-            <a href="#" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
+            <a href="{{admin_url}}" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">

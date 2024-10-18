@@ -37,8 +37,8 @@
         <div style="text-align: center; margin-top: 20px;">
             <div style="font-size: 22px; font-weight: 600;">Booking Cancelled</div>
             <div style="font-size: 18px; font-weight: 400; margin: 8px 0;">
-              The booking for the Tropical Island Adventure package has been cancelled by the user because of
-              Change in travel plans due to unexpected family commitments.
+              The booking for {{package_name}} package has been cancelled by the user because of
+              Change in travel plans due {{cancellation_reason}}.
             </div>
         </div>
 
@@ -47,52 +47,56 @@
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking ID</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{booking_id}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Travel Dates</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024, to August 20, 2024</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{travel_from}} to {{travel_to}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Number of Travellers</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">2 Adults, 1 Child</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">
+                          {% if adults > 0 %}{{adults}} Adults, {% endif %}{% if children > 0 %}{{children}} Child, {% endif %}{% if infants > 0 %}{{infants}} Infants{% endif %}
+                      </td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Refund Type</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">Refundable</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{refund_type}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking Amount</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹31,057</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ {{paid_amount}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
+                  {% if refund_type == 'Refundable' %}
                   <tr>
                       <td class="info-block" style="font-size: 18px; font-weight: 400;">Refund Amount</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹22,057</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ {{refund_amount}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
+                  {% endif %}
               </table>
           </div>
         </div>
 
         <div style="text-align: center; margin-top: 20px;">
-            <a href="#" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
+            <a href="{{agent_url}}" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
