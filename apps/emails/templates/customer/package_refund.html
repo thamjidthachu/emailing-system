@@ -52,13 +52,10 @@
                     <img src="https://dev-exrevampadmin.flycatchtech.in/media/icons/explore-world-white.png" alt="Explore World Logo" style="width: 231px; height: 42px; text-align: center; margin: 0 auto;" />
                 </td>
             </tr>
-            <tr>
-                <td style="color: white; font-size: 16px; font-weight: 400; line-height: 24px; padding-right: 2px; text-align: center !important;">Confirmation Number: 235354675</td>
-            </tr>
         </table>
 
         <div style="text-align: center; margin-top: 50px;">
-            <div style="font-size: 18px;">Good News!<br>Your Refund for Tropical Island Adventure package Has Been Processed</div>
+            <div style="font-size: 18px;">Good News!<br>Your Refund for {{package_name}} package Has Been Processed</div>
         </div>
 
         <div style="background: #F0F3F6; border-radius: 12px; padding: 32px 24px; margin-top: 60px;">
@@ -69,24 +66,21 @@
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking ID</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">#{{booking_id}}</td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
                     </tr>
                     <tr>
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking Amount</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹31,057</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ {{booking_amount}}</td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
                     </tr>
                     <tr>
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Refund Amount</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹22,057</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><hr style="border: none; height: 0.5px; background-color: #BAB2B2; margin: 20px 0;"></td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ {{refund_amount}}</td>
                     </tr>
                 </table>
             </div>
@@ -94,8 +88,8 @@
 
 
         <div class="button-wrapper" style="text-align: center; margin-top: 35px;">
-            <a class="button" href="#" style="padding: 16px; background: #E41D55; color: white; border-radius: 4px; border: 1px solid #E41D55; font-size: 16px; text-decoration: none; display: inline-block; margin-right: 20px; width: 300px;">View and manage your booking</a>
-            <a class="button" href="#" style="padding: 16px; background: transparent; color: #E41D55; border: 1px solid #E41D55; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block; width: 300px;">Cancellation Policy</a>
+            <a class="button" href="view_details_url" style="padding: 16px; background: #E41D55; color: white; border-radius: 4px; border: 1px solid #E41D55; font-size: 16px; text-decoration: none; display: inline-block; margin-right: 20px; width: 300px;">View and manage your booking</a>
+            <a class="button" href="{{frontend_url}}/cancellation-policy" style="padding: 16px; background: transparent; color: #E41D55; border: 1px solid #E41D55; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block; width: 300px;">Cancellation Policy</a>
         </div>
 
 
@@ -122,14 +116,14 @@
         <div style="text-align: center; margin-top: 40px;">
             <table role="presentation" width="100%">
                 <tr>
-                    <td style="font-size: 13px; text-align: center; hover:pointer;">
-                        <a style="text-decoration: none; color: #200505;" href="#">Privacy Policy</a>
+                    <td style="font-size: 13px; text-align: center;">
+                        <a style="text-decoration: none; color: #200505;" href="{{frontend_url}}/privacy-policy">Privacy Policy</a>
                     </td>
-                    <td style="font-size: 13px; text-align: center; hover:pointer;">
-                        <a style="text-decoration: none; color: #200505;" href="#">Terms and Conditions</a>
+                    <td style="font-size: 13px; text-align: center;">
+                        <a style="text-decoration: none; color: #200505;" href="{{frontend_url}}/terms-and-conditions">Terms and Conditions</a>
                     </td>
-                    <td style="font-size: 13px; text-align: center; hover:pointer;">
-                        <a style="text-decoration: none; color: #200505;" href="#">Cancellation Policy</a>
+                    <td style="font-size: 13px; text-align: center;">
+                        <a style="text-decoration: none; color: #200505;" href="{{frontend_url}}/cancellation-policy">Cancellation Policy</a>
                     </td>
                 </tr>
             </table>

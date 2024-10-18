@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Package Payment Transaction</title>
+    <title>Package Booking Status Change</title>
     <style>
         hr{
             border-top: 1px solid #6E6E6E;
@@ -35,40 +35,48 @@
         </table>
 
         <div style="text-align: center; margin-top: 20px;">
-            <div style="font-size: 22px; font-weight: 600;">Payment Transaction</div>
-            <div style="font-size: 18px; font-weight: 400; margin: 8px 0;">
-              A new transaction against the Tropical Island Adventure package has been initiated by the admin
+            <div style="font-size: 22px; font-weight: 600;">Package Status Changed - Approval Needed</div>
+            <div style="font-size: 18px; font-weight: 400; margin: 10px 0;">
+                Status of package {{package_name}} updated from <strong>Inactive</strong> to <strong>Active</strong>.
             </div>
         </div>
 
-        <div style="padding: 32px 24px;">
-            <div style="margin-top: 20px;">
+        <div style="padding: 24px 24px;">
+          <div style="margin-top: 20px;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
-                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Transaction ID</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">#8598430593859384</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Package Name</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{package_name}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
                   <tr>
-                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Transaction Amount</td>
-                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ 31,057</td>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Package ID</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">#{{package_id}}</td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
+                  </tr>
+                  <tr>
+                      <td class="info-block" style="font-size: 18px; font-weight: 400;">Date Submitted</td>
+                      <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{submit_date}}</td>
                   </tr>
                   <tr>
                       <td colspan="2"><hr style="border: none; border-top: 1px solid #BAB2B2;"></td>
                   </tr>
               </table>
-            </div>
+          </div>
+        </div>
 
-            <div style="font-size: 18px; font-weight: 400; margin: 8px 0;">
-                The amount should reflect in your account within 4-6 business days.
-                If you have any questions or need further assistance, please do not hesitate to contact us.
+        <div style="text-align: center;">
+            <div style="font-size: 18px; font-weight: 400; margin: 10px 0;">
+                Please review and approve or reject the package in the system.
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 20px;">
-            <a href="#" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
+            <a href="{{admin_url}}" style="padding: 10px 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View Details</a>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">

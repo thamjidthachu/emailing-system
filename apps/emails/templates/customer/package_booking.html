@@ -44,60 +44,56 @@
                     <img src="https://dev-exrevampadmin.flycatchtech.in/media/icons/explore-world-white.png" alt="Explore World Logo" style="width: 231px; height: 42px; text-align: center; margin: 0 auto;" />
                 </td>
             </tr>
-            <tr>
-                <td style="color: white; font-size: 16px; font-weight: 400; line-height: 24px; padding-right: 2px; text-align: center !important;">Confirmation Number: 235354675</td>
-            </tr>
         </table>
 
         <div style="text-align: center; margin-top: 50px;">
             <div style="font-size: 18px;font-weight: 500;">Thank You {{name}}</div>
             <div style="font-size: 22px; font-weight: 600; margin-top: 5px">Your booking with Explore World is confirmed.</div>
             <div style="font-size: 18px; font-weight: 400; margin: 8px 0;">
-                We are excited to confirm your booking for the Tropical Island Adventure. Your full itinerary Information are in the document attached with this email.
+                We are excited to confirm your booking for {{package_name}}. Your full itinerary Information are in the document attached with this email.
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 35px;">
-            <a href="#" style="padding: 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View and manage your booking</a>
+            <a href="{{view_details_url}}" style="padding: 16px; background: #E41D55; color: white; border-radius: 4px; font-size: 16px; text-decoration: none; display: inline-block;">View and manage your booking</a>
         </div>
 
         <div style="background: #F0F3F6; border-radius: 12px; padding: 32px 24px; margin-top: 60px;">
             <div style="text-align: center;">
-                <img class="tropical-island"
-                     src="https://dev-exrevampadmin.flycatchtech.in/media/icons/tropical-island.png"
-                     alt="Tropical Island Image"
-                     style="width: 368px; height: 176px; object-fit: cover; border-radius: 32px; border: 1px solid #ccc;">
+                <img style="width: 368px; height: 176px; object-fit: cover; border-radius: 32px; border: 1px solid #ccc;" class="tropical-island" src="{{image_url}}" alt="image">
             </div>
             <div style="margin-top: 32px;">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Booking ID</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">235354675</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{booking_id}}</td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr></td>
                     </tr>
                     <tr>
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Travel Dates</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">August 15, 2024 to August 20, 2024</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">{{travel_from}} to {{travel_to}}</td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr></td>
                     </tr>
                     <tr>
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Number of Travelers</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">2 Adults, 1 Child</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">
+                            {% if adults > 0 %}{{adults}} Adults, {% endif %}{% if children > 0 %}{{children}} Child, {% endif %}{% if infants > 0 %}{{infants}} Infants{% endif %}
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr></td>
                     </tr>
                     <tr style="margin-top: 12px;">
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Total Amount</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ 93,524</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ {{total}}</td>
                     </tr>
                     <tr style="margin-top: 12px;">
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Amount Paid</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ 31,057</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; text-align: right;">₹ {{paid_amount}}</td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -106,14 +102,14 @@
                     </tr>
                     <tr style="margin-top: 8px;">
                         <td class="info-block" style="font-size: 18px; font-weight: 400;">Balance</td>
-                        <td class="info-block" style="font-size: 16px; font-weight: 600; color: #2D54F9; text-align: right;">₹ 72,467</td>
+                        <td class="info-block" style="font-size: 16px; font-weight: 600; color: #2D54F9; text-align: right;">₹ {{balance}}</td>
                     </tr>
                 </table>
             </div>
         </div>
 
         <div style="margin-top: 50px;">
-            <div  style="font-size: 18px; margin-bottom: 24px;">Please ensure that the balance amount of <strong>₹ 72,467</strong> is paid by <strong>17 August 2024</strong> to avoid any inconvenience.</div>
+            <div  style="font-size: 18px; margin-bottom: 24px;">Please ensure that the balance amount of <strong>₹ {{balance}}</strong> is paid by <strong>{{travel_from}}</strong> to avoid any inconvenience.</div>
             <div  style="font-size: 18px; margin-bottom: 20px;"><strong>Important Information</strong></div>
             <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 16px;">
                 <div style="line-height: 0; margin-top: 0px;">
@@ -125,13 +121,13 @@
                 <div style="line-height: 0; margin-top: 0px;">
                     <img src="https://dev-exrevampadmin.flycatchtech.in/media/icons/info-circle.png" style="width: 22px; height: 22px; display: inline-block; margin-right: 4px;">
                 </div>
-                <div style="font-size: 18px;">Our representative will be waiting for you at [Meeting Point] on [Meeting Date] at [Meeting Time]</div>
+                <div style="font-size: 18px;">Our representative will be waiting for you at {{meeting_point}} on {{travel_from}} at {{meeting_time}}</div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 16px;">
                 <div style="line-height: 0; margin-top: 0px;">
                     <img src="https://dev-exrevampadmin.flycatchtech.in/media/icons/info-circle.png" style="width: 22px; height: 22px; display: inline-block; margin-right: 4px;">
                 </div>
-                <div style="font-size: 18px;">In case of any changes or cancellations, please refer to our cancellation policy [link to policy]</div>
+                <div style="font-size: 18px;">In case of any changes or cancellations, please refer to our cancellation policy</div>
             </div>
 
         </div>
@@ -155,13 +151,13 @@
             <table role="presentation" width="100%">
                 <tr>
                     <td style="font-size: 13px; text-align: center;">
-                        <a href="#" style="text-decoration: none; color: #200505;">Privacy Policy</a>
+                        <a style="text-decoration: none; color: #200505;" href="{{frontend_url}}/privacy-policy">Privacy Policy</a>
                     </td>
                     <td style="font-size: 13px; text-align: center;">
-                        <a href="#" style="text-decoration: none; color: #200505;">Terms and Conditions</a>
+                        <a style="text-decoration: none; color: #200505;" href="{{frontend_url}}/terms-and-conditions">Terms and Conditions</a>
                     </td>
                     <td style="font-size: 13px; text-align: center;">
-                        <a href="#" style="text-decoration: none; color: #200505;">Cancellation Policy</a>
+                        <a style="text-decoration: none; color: #200505;" href="{{frontend_url}}/cancellation-policy">Cancellation Policy</a>
                     </td>
                 </tr>
             </table>
